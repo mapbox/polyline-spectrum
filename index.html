@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <textarea id="output"></textarea>
+    <script src='https://npmcdn.com/random-js@1.0.8/lib/random.min.js'></script>
+    <script>
+      function initMap() {
+        var rand = Random.engines.mt19937();
+        var r = new Random(Random.engines.mt19937().seedWithArray([0x12345678, 0x90abcdef]));
+        var inputs = [];
+        for (var i = 1; i < 10; i++) {
+          var line = [];
+          for (var j = 0; j < i * 10; j++) {
+            line.push([
+              r.real(-90, 90),
+              r.real(-180, 180)
+            ]);
+          }
+          inputs.push({
+            source: 'Generated from Google Maps #' + i,
+            input: line,
+            output: google.maps.geometry.encoding.encodePath(
+                line.map(coord => new google.maps.LatLng(coord[0], coord[1])))
+          });
+        }
+        output.value = JSON.stringify(inputs, null, 2);
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEIGpCVNM7BUKSyxDtWXF4IuFblfiQVDI&callback=initMap&libraries=geometry"
+    async defer></script>
+  </body>
+</html>
