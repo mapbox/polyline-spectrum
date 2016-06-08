@@ -1,0 +1,3 @@
+#!/usr/bin/env node
+
+process.stdout.write(require('polyline').encode(JSON.parse(process.argv[2])));
