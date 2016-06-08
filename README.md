@@ -26,6 +26,8 @@ algorithm. This test compares multiple implementations across multiple languages
 * **Python**
 * https://github.com/frederickjansen/polyline
 
+## [Results](RESULTS.md)
+
 ## Contributing a new implementation
 
 1. If the implementation uses a package manager like pip or npm,
