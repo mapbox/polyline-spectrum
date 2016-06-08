@@ -1,0 +1,5 @@
+#!/usr/bin/env python
+
+import polyline, json, sys
+
+sys.stdout.write(json.dumps(polyline.decode(sys.argv[1])))

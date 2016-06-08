@@ -3,7 +3,8 @@ import os, json, unittest, subprocess
 libraries = [
         "./mapbox-polyline",
         "./jieter-leaflet-encoded",
-        "./joshuaclayton-polylines"
+        "./joshuaclayton-polylines",
+        "./frederickjansen-polyline"
 ]
 
 class TestPolylineMethods(unittest.TestCase):
