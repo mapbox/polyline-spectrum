@@ -39,3 +39,16 @@ algorithm. This test compares multiple implementations across multiple languages
    the correct interpreter for them to run
 4. Add the new implementation to the list of implementations in `test.py`
 5. Test the new implementation by running `python test.py`
+
+## Contributing a new test case
+
+1. Confirm that the test case is absolutely true. [The Google polyline utility](https://developers.google.com/maps/documentation/utilities/polylineutility)
+   is our authoritative implementation.
+2. Add the pair of `input` and `output` to `fixtures/canon.json`
+3. Run `python test.py` to confirm behavior
+
+## How do I post an issue?
+
+This is a [pull requests for everything](https://gist.github.com/ryanflorence/8a62abea562ca2896dee) repository:
+if you need a new implementation covered, please follow the guide above
+to add it. Same if you find a bug, or need an additional test.
