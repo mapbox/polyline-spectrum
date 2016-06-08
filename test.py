@@ -17,7 +17,9 @@ class TestPolylineMethods(unittest.TestCase):
                 self.assertEqual(
                     subprocess.check_output([
                         os.path.join(library, "encode"),
-                    json.dumps(fixture["input"])]), fixture["output"])
+                        json.dumps(fixture["input"])]),
+                    fixture["output"],
+                    "encode %s against %s" % (library, fixture["source"]))
 
     def test_decode(self):
         for library in libraries:
@@ -25,7 +27,9 @@ class TestPolylineMethods(unittest.TestCase):
                 self.assertEqual(
                     json.loads(subprocess.check_output([
                         os.path.join(library, "decode"),
-                    fixture["output"]])), fixture["input"])
+                        fixture["output"]])),
+                    fixture["input"],
+                    "decode %s against %s" % (library, fixture["source"]))
 
 if __name__ == '__main__':
     unittest.main()
