@@ -1,3 +1,6 @@
 dependencies:
   pre:
     - sh setup.sh
+test:
+  override:
+    - python test.py
