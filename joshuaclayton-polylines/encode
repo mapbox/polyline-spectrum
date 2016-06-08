@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "polylines"
+require "json"
+
+print Polylines::Encoder.encode_points(JSON.parse(ARGV[0]))

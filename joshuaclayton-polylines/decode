@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "polylines"
+require "json"
+
+print Polylines::Decoder.decode_polyline(ARGV[0]).to_json
