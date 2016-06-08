@@ -7,21 +7,25 @@ libraries = [
         "./frederickjansen-polyline"
 ]
 
+fixtures = json.load(open('./fixtures/canon.json'))
+
 class TestPolylineMethods(unittest.TestCase):
 
     def test_encode(self):
         for library in libraries:
-            self.assertEqual(
-                subprocess.check_output([
-                    os.path.join(library, "encode"),
-                "[[1,2],[3,4]]"]), "_ibE_seK_seK_seK")
+            for fixture in fixtures:
+                self.assertEqual(
+                    subprocess.check_output([
+                        os.path.join(library, "encode"),
+                    json.dumps(fixture["input"])]), fixture["output"])
 
     def test_decode(self):
         for library in libraries:
-            self.assertEqual(
-                json.loads(subprocess.check_output([
-                    os.path.join(library, "decode"),
-                "_ibE_seK_seK_seK"])), [[1,2],[3,4]])
+            for fixture in fixtures:
+                self.assertEqual(
+                    json.loads(subprocess.check_output([
+                        os.path.join(library, "decode"),
+                    fixture["output"]])), fixture["input"])
 
 if __name__ == '__main__':
     unittest.main()

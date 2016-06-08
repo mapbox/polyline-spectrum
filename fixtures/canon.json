@@ -1,0 +1,12 @@
+[
+{
+  "source": "https://developers.google.com/maps/documentation/utilities/polylinealgorithm",
+  "input": [[38.5, -120.2], [40.7, -120.95], [43.252, -126.453]],
+  "output": "_p~iF~ps|U_ulLnnqC_mqNvxq`@"
+},
+{
+  "source": "simplest possible example",
+  "input": [[1,2],[3,4]],
+  "output": "_ibE_seK_seK_seK"
+}
+]
