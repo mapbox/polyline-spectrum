@@ -3,4 +3,4 @@ dependencies:
     - sh setup.sh
 test:
   override:
-    - python polyline_test.py
+    - python test.py
